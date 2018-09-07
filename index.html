@@ -4,8 +4,45 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="script.js"></script>
+
+    <style>
+        .form_inside {
+            display: flex;
+            flex-flow: row wrap;
+            margin: 2px;
+        }
+
+        .text {
+            height: 50px;
+        }
+
+        .redBorder {
+            border: 1px #ff2513 solid;
+        }
+
+        .label {
+            display: flex;
+            flex-flow: row wrap;
+            color: #ff2513;
+            font-size: 10px;
+            align-items: center;
+            padding-left: 2px;
+        }
+    </style>
 </head>
 <body>
-
+<form action="" class="form">
+    <input type="text" class="form_inside" placeholder="Введите имя" id="name" required>
+    <div class="label" id="label_name"></div>
+    <input type="text" class="form_inside" placeholder="Укажите email" id="email" required>
+    <div class="label" id="label_email"></div>
+    <input type="text" class="form_inside" placeholder="Укажите телефон" title="в формате +7(000)000-0000"
+           id="phone" required>
+    <div class="label" id="label_phone"></div>
+    <input type="text" class="form_inside text" placeholder="Введите сообщение" id="message" required>
+    <div class="label" id="label_message"></div>
+    <input type="submit" class="form_inside" id="submit" value="Отправить">
+</form>
+<script src="script2.js"></script>
 </body>
 </html>
