@@ -6,6 +6,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="script.js"></script>
     <style>
+        .form {
+            position: relative;
+        }
+
         .form_inside {
             display: flex;
             flex-flow: row wrap;
@@ -28,12 +32,34 @@
             align-items: center;
             padding-left: 2px;
         }
-        .email{
+
+        .email {
             text-transform: lowercase;
         }
-        .name{
+
+        .invisible {
+
+            display: none;
+            flex-flow: wrap row;
+            align-items: center;
+            width: 157px;
+            left: 3px;
+            height: auto;
+            border: 1px solid #eee;
+            position: absolute;
+            background-color: #eeefff;
 
         }
+        .visible{
+            display: block;
+        }
+
+        .invisible a {
+            display: block;
+            text-decoration: none;
+            padding: 2px;
+        }
+
     </style>
 </head>
 <body>
@@ -46,7 +72,7 @@
            id="phone" required>
     <div class="label" id="label_phone"></div>
     <input type="text" class="form_inside" placeholder="Укажите город" id="city" required>
-    <div class="towns_variants"></div>
+    <div id="towns_variants" class="towns_variants invisible"></div>
     <div class="label" id="label_city"></div>
     <input type="text" class="form_inside text" placeholder="Введите сообщение" id="message" required>
     <div class="label" id="label_message"></div>

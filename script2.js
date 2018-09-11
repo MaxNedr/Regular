@@ -13,8 +13,36 @@
 *
 ** - В случае не прохождения валидации одним из полей необходимо выделять это поле красной рамкой
 * и сообщать пользователю об ошибке. */
-(function($){
+(function ($) {
     $(function () {
+        $.ajax({
+            url: "http://localhost:3000/towns", dataType: "json", success: function (data) {
+                var getData = data;
+                getData.forEach(function (element) {
+                    var $nameTown = element.name;
+                    var href = document.createElement('a');
+                    href.href = '#';
+                    href.id = element.id;
+                    href.innerText = element.name;
+                    if ($nameTown) {
+                        $('#towns_variants').append(href);
+                    }
+                });
+                $(window).on("click", function (event) {
+                    if (event.target.id !== 'city') {
+                        $('#towns_variants').removeClass('visible')
+                    }
+                });
+                $('#city').on("click", function () {
+                    $('#towns_variants').addClass('visible')
+                });
+                $('#towns_variants a').on('click', function (ev) {
+                    console.log(ev.target.text);
+                    $('#city').attr('value',ev.target.text)
+                })
+
+            }
+        });
         document.getElementById('submit').addEventListener('click', function () {
             var name = document.getElementById('name').value;
             var email = document.getElementById('email').value;
