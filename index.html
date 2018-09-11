@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="script.js"></script>
-V
     <style>
         .form_inside {
             display: flex;
@@ -31,11 +31,14 @@ V
         .email{
             text-transform: lowercase;
         }
+        .name{
+
+        }
     </style>
 </head>
 <body>
 <form action="" class="form">
-    <input type="text" class="form_inside" placeholder="Введите имя" id="name" required>
+    <input type="text" class="form_inside name" placeholder="Введите имя" id="name" required>
     <div class="label" id="label_name"></div>
     <input type="text" class="form_inside email" placeholder="Укажите email" id="email" required>
     <div class="label" id="label_email"></div>
