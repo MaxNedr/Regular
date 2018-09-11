@@ -18,9 +18,10 @@ document.getElementById('submit').addEventListener('click', function () {
     var name = document.getElementById('name').value;
     var email = document.getElementById('email').value;
     var phone = document.getElementById('phone').value;
+    var city = document.getElementById('city').value;
     var message = document.getElementById('message').value;
 
-    if (/^\w+$/.test(message)) {
+    if (message) {
         document.getElementById('message').className = ('form_inside');
         document.getElementById('label_message').innerText = '';
         console.log('Сообщение: ' + message + ' верное');
@@ -30,7 +31,7 @@ document.getElementById('submit').addEventListener('click', function () {
     }
 
 
-    if (/^[A-zА-яЁё]+$/.test(name)) {
+    if (/(^[A-Z]{1}[a-z]{1,14} [A-Z]{1}[a-z]{1,14}$)|(^[А-Я]{1}[а-я]{1,14} [А-Я]{1}[а-я]{1,14}$)/.test(name)) {
         document.getElementById('name').className = ('form_inside');
         document.getElementById('label_name').innerText = '';
         console.log('Имя: ' + name + ' верное');
@@ -42,7 +43,18 @@ document.getElementById('submit').addEventListener('click', function () {
         document.getElementById('label_name').innerText = 'Имя должно состоять только из букв';
         console.log('Имя: ' + name + ' Неверное');
     }
-
+    if (city) {
+        document.getElementById('city').className = ('form_inside');
+        document.getElementById('label_city').innerText = '';
+        console.log('Город: ' + city + ' верное');
+    } else if (city === "") {
+        document.getElementById('city').classList.add('redBorder');
+        document.getElementById('label_city').innerText = 'Это поле не может быть пустым';
+    } else {
+        document.getElementById('city').classList.add('redBorder');
+        document.getElementById('label_city').innerText = 'Название города указано неверно';
+        console.log('Город: ' + city + ' Неверное');
+    }
 
     if (/^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$/.test(email)) {
         document.getElementById('email').className = ('form_inside');
