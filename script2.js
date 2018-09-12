@@ -85,7 +85,7 @@
                 console.log('Город: ' + city + ' Неверное');
             }
 
-            if (/^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$/.test(email)) {
+            if (/^[-._a-zA-Z0-9]+@(?:[a-zA-Z0-9][-a-zA-Z0-9]+\.)+[a-zA-Z]{2,6}$/.test(email)) {
                 document.getElementById('email').className = ('form_inside');
                 document.getElementById('label_email').innerText = '';
                 console.log('Эл. почта: ' + email + ' верное');
