@@ -41,7 +41,6 @@ b) ошибочные поля подсветить с помощью каког
         });
         var arr = [];
         document.getElementById('submit').addEventListener('click', function () {
-
             var name = document.getElementById('name').value;
             var bday = document.getElementById('bday').value;
             var email = document.getElementById('email').value;
@@ -49,25 +48,11 @@ b) ошибочные поля подсветить с помощью каког
             var city = document.getElementById('city').value;
             var message = document.getElementById('message').value;
 
-
             if (bday === "") {
                 $("#bday").effect('bounce');
                 document.getElementById('bday').classList.add('redBorder');
                document.getElementById('label_bday').innerText = 'Это поле не может быть пустым';
                arr.push('Поле "День рождения": ' + $('#label_bday').text());
-               /* $("#label_bday").dialog({
-                    modal: true,
-                    message:'Это поле не может быть пустым',
-                    title: 'Ошибочка вышла',
-                    buttons: {
-                        'Я всё исправлю': function () {
-                            $(this).dialog("close");
-                            document.getElementById('bday').classList.remove('redBorder');
-                            document.getElementById('message').className = ('form_inside');
-                            document.getElementById('label_bday').innerText = '';
-                        }
-                    }
-                });*/
             } else {
                 document.getElementById('bday').classList.remove('redBorder');
                 document.getElementById('message').className = ('form_inside');
@@ -76,24 +61,12 @@ b) ошибочные поля подсветить с помощью каког
             if (message) {
                 document.getElementById('message').className = ('form_inside');
                 document.getElementById('label_message').innerText = '';
-                console.log('Сообщение: ' + message + ' верное');
             } else {
                 $("#message").effect('bounce');
                 document.getElementById('message').classList.add('redBorder');
                 document.getElementById('label_message').innerText = 'Это поле не может быть пустым';
                 arr.push('Поле "Сообщение": ' + $('#label_message').text());
-                /*$("#label_message").dialog({
-                    modal: true,
-                    title: 'Ошибочка вышла',
-                    buttons: {
-                        'Я всё исправлю': function () {
-                            $(this).dialog("close");
-                            document.getElementById('message').classList.remove('redBorder');
-                            document.getElementById('message').className = ('form_inside');
-                            document.getElementById('label_message').innerText = '';
-                        }
-                    }
-                });*/
+
             }
 
             if (/(^\w+$)|(^\w+\s\w+$)|(^\w+\s\w+\s\w+$)/.test(name)) {
@@ -115,7 +88,6 @@ b) ошибочные поля подсветить с помощью каког
             if (city) {
                 document.getElementById('city').className = ('form_inside');
                 document.getElementById('label_city').innerText = '';
-                console.log('Город: ' + city + ' верное');
             } else if (city === "") {
                 $("#city").effect('bounce');
                 document.getElementById('city').classList.add('redBorder');
@@ -125,14 +97,12 @@ b) ошибочные поля подсветить с помощью каког
                 $("#city").effect('bounce');
                 document.getElementById('city').classList.add('redBorder');
                 document.getElementById('label_city').innerText = 'Название города указано неверно';
-                console.log('Город: ' + city + ' Неверное');
                 arr.push('Поле "Город": ' + $('#label_city').text());
             }
 
             if (/^[-._a-zA-Z0-9]+@(?:[a-zA-Z0-9][-a-zA-Z0-9]+\.)+[a-zA-Z]{2,6}$/.test(email)) {
                 document.getElementById('email').className = ('form_inside');
                 document.getElementById('label_email').innerText = '';
-                console.log('Эл. почта: ' + email + ' верное');
             } else if (email === '') {
                 $("#email").effect('bounce');
                 document.getElementById('email').classList.add('redBorder');
@@ -142,7 +112,6 @@ b) ошибочные поля подсветить с помощью каког
                 $("#email").effect('bounce');
                 document.getElementById('email').classList.add('redBorder');
                 document.getElementById('label_email').innerText = 'Email указан неверно';
-                console.log('Эл. почта: ' + email + ' Неверная');
                 arr.push('Поле "Email": ' + $('#label_email').text());
             }
 
@@ -150,7 +119,6 @@ b) ошибочные поля подсветить с помощью каког
             if (/^(8|\+7)(\(\d{3}\))(\d{3}-)(\d{4})$/.test(phone)) {
                 document.getElementById('phone').className = ('form_inside');
                 document.getElementById('label_phone').innerText = '';
-                console.log('Телефон: ' + phone + ' верное');
             } else if (phone === '') {
                 $("#phone").effect('bounce');
                 document.getElementById('phone').classList.add('redBorder');
@@ -160,7 +128,6 @@ b) ошибочные поля подсветить с помощью каког
                 $("#phone").effect('bounce');
                 document.getElementById('phone').classList.add('redBorder');
                 document.getElementById('label_phone').innerText = 'Телефон указан неверно';
-                console.log('Телефон: ' + phone + ' Неверное');
                 arr.push('Поле "Телефон": ' + $('#label_phone').text());
             }
             arr.forEach(function (elem) {
