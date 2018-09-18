@@ -5,7 +5,7 @@
 2. Улучшить шаблон таким образом, чтобы конструкции типа aren’t не меняли одинарную кавычку на двойную.*/
 
 
-
+/*
 var testRegexp = "I am 'your' friend, aren't I? Yes, you' are.";
 console.log("Было "+ testRegexp);
-console.log('Стало ' +testRegexp.replace(/\'(\w+)\'/g, '"$1"'));
+console.log('Стало ' +testRegexp.replace(/\'(\w+)\'/g, '"$1"'));*/

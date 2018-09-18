@@ -54,7 +54,8 @@
             background-color: #eeefff;
 
         }
-        .visible{
+
+        .visible {
             display: block;
         }
 
@@ -64,18 +65,22 @@
             padding: 2px;
             color: #222;
         }
+
         .invisible a:hover {
             color: #8d0000;
             transform: scale(1.01);
         }
 
+        .dialog {
+            display: block;
+        }
     </style>
 </head>
 <body>
 <form action="" class="form">
     <input type="text" class="form_inside name" placeholder="Введите имя" id="name" required>
     <div class="label" id="label_name"></div>
-    <input type="text" class="form_inside bday" placeholder="Укажите дату рождения" id="bday" required readonly  >
+    <input type="text" class="form_inside bday" placeholder="Укажите дату рождения" id="bday" required readonly>
     <div class="label" id="label_bday"></div>
     <input type="text" class="form_inside email" placeholder="Укажите email" id="email" required>
     <div class="label" id="label_email"></div>
@@ -89,6 +94,7 @@
     <div class="label" id="label_message"></div>
     <input type="submit" class="form_inside" id="submit" value="Отправить">
 </form>
+<div class="dialog" id="dialog"></div>
 <script src="script2.js"></script>
 </body>
 </html>
